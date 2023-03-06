@@ -72,7 +72,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 height: 30,
                 decoration: BoxDecoration(
                   color: Colors.grey,
-                  borderRadius: BorderRadius.circular(8),
+                  borderRadius: BorderRadius.circular(15),
                 ),
                 child: Center(
                     child: Text(
