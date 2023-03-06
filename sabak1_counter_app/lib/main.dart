@@ -1,20 +1,38 @@
+// Импорт бул бардык флаттерге тиешелүү нерселерди өзүнө камтыйт
 import 'package:flutter/material.dart';
 
+// void: Эч нерсе кайтарбайт
+//main: негизги функция
+// (): Функциянын функция экенин билдирет
+// {}:  функциянын денеси
 void main() {
+  // runApp:Сиздин тиркемеңизди баштоо функциясы ал ичине виджет алат
+  // MyApp(): класс же виджеттин аталышы
   runApp(const MyApp());
 }
 
+// class MyApp: класс
+// extends: Мурас алуу => StatelessWidget
 class MyApp extends StatelessWidget {
+  // класстын конструктору
   const MyApp({super.key});
-
+// @override:
   @override
+  //build Куруу ал өзүнө виджет алат
+  // BuildContext бул адрес виджеттерди көзөмөлдөөчү вектор
   Widget build(BuildContext context) {
+    // return: кайтарат эмнени кайтарат?MaterialAppты кайтарат
+    //MaterialApp материалдык дизайны бар жаңы флаттер колдонмосун түзөт
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+
       title: 'Flutter Demo',
+      // theme: бул тема MaterialAppка тиешелүү свойство
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
+      // home:Уй.MaterialAppтын свойствосу
+      // MyHomePage() бул бир виджет же класс
       home: const MyHomePage(),
     );
   }
@@ -29,6 +47,18 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   int index = 0;
+  void koshuu() {
+    setState(() {
+      index++;
+    });
+  }
+
+  void kemituu() {
+    setState(() {
+      index--;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -69,9 +99,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 children: [
                   ElevatedButton(
                     onPressed: () {
-                      setState(() {
-                        index--;
-                      });
+                      kemituu();
                     },
                     child: const Icon(Icons.remove),
                   ),
@@ -80,9 +108,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                   ElevatedButton(
                       onPressed: () {
-                        setState(() {
-                          index++;
-                        });
+                        koshuu();
                       },
                       child: const Icon(Icons.add))
                 ],
