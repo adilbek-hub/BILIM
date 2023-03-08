@@ -15,9 +15,10 @@ class _MyHomePageState extends State<MyHomePage> {
       backgroundColor: const Color(0xff056c5c),
       appBar: AppBar(
         backgroundColor: Colors.white,
+        // ignore: prefer_const_constructors
         title: Center(
-            child: Text(
-          "Тапшырма 4$san",
+            child:  Text(
+          "Тапшырма 4",
           style: TextStyle(color: Colors.black),
         )),
         elevation: 0,
