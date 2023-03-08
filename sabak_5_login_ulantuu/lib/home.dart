@@ -13,14 +13,12 @@ class _MyHomePageState extends State<MyHomePage> {
   String? phoneNumber;
   String? email;
   void ishtoo() {
-    if (phoneNumber != null && email != null) {
-      if (phoneNumber!.isEmpty || email!.isEmpty) {
-        isActive = false;
-      } else {
-        isActive = true;
-      }
-      setState(() {});
+    if (phoneNumber!.isEmpty || email!.isEmpty) {
+      isActive = false;
+    } else {
+      isActive = true;
     }
+    setState(() {});
   }
 
   @override
